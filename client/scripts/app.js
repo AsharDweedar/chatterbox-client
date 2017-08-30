@@ -25,6 +25,21 @@ var app ={
 		});
 	},
 	fetch:function(){
+		$.ajax({
+			/*url : 'http://parse.CAMPUS.hackreactor.com/chatterbox/classes/messages',
+			type : `GET` ,
+			dataType : `jsonp`,
+			success : console.log('chatterbox: Message recieved'),*/
+		})
 
+	},
+	clearMessages : function (){
+		$('#chats').empty();
+	},
+	renderMessage : function (message) {
+		$('#chats').append('<div>'+message.username + '<p>' + message.text + '</p>' +'</div>')
+	},
+	renderRoom : function (room){
+		$("#roomSelect").append('<option>'+ room +'</option>')
 	}
 }
