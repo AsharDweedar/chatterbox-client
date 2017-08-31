@@ -35,9 +35,9 @@
         <select id='roomSelect'>   
         </select>
       </div>
-      <div>
+      <div id='send'>
         <input type="text" placeholder="Chat_Message" id="message"/>
-        <button type="Submit" id='submitButton' onclick="">
+        <button type="submit" class='submit' onsubmit="app.handleSubmit()">
           Submit
         </button>
       </div>
@@ -45,7 +45,6 @@
     <div id="chats"></div>
   </body>
 </html>
-<!-- n.slice(n.search('=')+1).split('%20').join(' ') -->
 
 
 

@@ -1,14 +1,6 @@
 // YOUR CODE HERE:
 var app ={
 	init: function(){
-		var allName = window.location.search;
-	 	var name = allName.slice(allName.search('=')+1).split('%20').join(' ')
-		var message = {
-			username: name,
-			text: $("#message").val(),
-			roomname: $("#room").val()
-		};
-		this.send(message);
 	},
 	send : function(message){
 		$.ajax({
@@ -37,9 +29,28 @@ var app ={
 		$('#chats').empty();
 	},
 	renderMessage : function (message) {
-		$('#chats').append('<div>'+message.username + '<p>' + message.text + '</p>' +'</div>')
+		$('#chats').append('<div class="username" onclick="app.handleUsernameClick()">'+message.username + '<p>' + message.text + '</p>' +'</div>')
 	},
 	renderRoom : function (room){
 		$("#roomSelect").append('<option>'+ room +'</option>')
+	},
+	handleUsernameClick : function (){
+
+	},
+	handleSubmit : function() {
+		console.log('called')
+		var allName = window.location.search;
+	 	var name = allName.slice(allName.search('=')+1).split('%20').join(' ')
+		var message = {
+			username: name,
+			text: $("#message").val(),
+			roomname: $("#room").val()
+		};
+		this.send(message);
 	}
 }
+
+
+
+
+
