@@ -21,8 +21,29 @@
       }
     </script>
     <!-- your scripts -->
+
+    
     <script src="env/config.js"></script>
     <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+      /*$('#send .submit').submit(function(){
+        console.log('called jQ handler')
+        app.handleSubmit()
+      } );*/
+      /*$('#send .submit').on('submit',function(){
+        console.log('called jQ handler')
+        app.handleSubmit()
+      } );*/
+
+        $('#send .submit').on('click',function(){
+        console.log('called jQ handler')
+        app.handleSubmit()
+      } );
+      /*$('#send .submit').on('submit',function(){
+        console.log('called jQ handler')
+        app.handleSubmit()
+      } );*/
+    </script>
   </head>
   <body>
     <div id="main">
@@ -37,7 +58,7 @@
       </div>
       <div id='send'>
         <input type="text" placeholder="Chat_Message" id="message"/>
-        <button type="submit" class='submit' onsubmit="app.handleSubmit()">
+        <button type="submit" class="submit" >
           Submit
         </button>
       </div>
